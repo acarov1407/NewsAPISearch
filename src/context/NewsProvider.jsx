@@ -48,8 +48,7 @@ function NewsProvider({ children }) {
         console.log(news)
         setNewsData(news);
         setTotalNews(result.totalResults);
-        console.log('llamado a la api')
-        console.log(process.env)
+        console.log('KEY: ' + import.meta.env.VITE_API_KEY);
     }
 
     
