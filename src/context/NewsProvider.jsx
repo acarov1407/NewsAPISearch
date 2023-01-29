@@ -11,13 +11,13 @@ function NewsProvider({ children }) {
     });
 
     const [newsData, setNewsData] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [totalNews, setTotalNews] = useState(0);
 
     const [firstLoad, setFirstLoad] = useState(true);
 
     useEffect(() => {
-        setPage(1);
+        setPage(0);
         getTopNewsFromAPI();
     }, [inputData])
 
@@ -39,7 +39,7 @@ function NewsProvider({ children }) {
     }
 
     const handlePageClick = (e) => {
-        setPage(e.selected + 1);
+        setPage(e.selected);
     }
 
     const getTopNewsFromAPI = async () =>{
@@ -49,6 +49,7 @@ function NewsProvider({ children }) {
         setNewsData(news);
         setTotalNews(result.totalResults);
         console.log('llamado a la api')
+        console.log(page)
     }
 
     

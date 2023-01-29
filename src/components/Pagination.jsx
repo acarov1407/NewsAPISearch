@@ -13,7 +13,7 @@ function Pagination() {
   return (
     <div>
         <ReactPaginate
-        forcePage={page - 1}
+        forcePage={page}
         breakLabel="..."
         nextLabel=">"
         onPageChange={handlePageClick}

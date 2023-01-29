@@ -1,10 +1,10 @@
 
-const API_KEY = import.meta.env.VITE_API_KEY ?? process.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export async function getTopNews(inputData, page){
     const {category, country} = inputData;
     try{
-        const result = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${page}&pageSize=12&apiKey=${API_KEY}`);
+        const result = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${page + 1}&pageSize=12&apiKey=${API_KEY}`);
         const data = await result.json();
 
         let filteredArticles = data.articles.map(news => {
