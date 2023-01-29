@@ -49,7 +49,7 @@ function NewsProvider({ children }) {
         setNewsData(news);
         setTotalNews(result.totalResults);
         console.log('llamado a la api')
-        console.log(page)
+        console.log(process.env.VITE_API_KEY)
     }
 
     
